@@ -55,7 +55,7 @@ if __name__ == "__main__":
                 
                 soigneur = input("Quel est le soigneur de l'animal : 1 = bob - 2 = john")
                 
-                new_animal = Elephant(name,appetit,satisfaction,True,bob if soigneur =="1" else john)
+                new_animal = Elephant(name,appetit,satisfaction,True,bob if soigneur =="1" else john,2)
                 
                 enclos_1.add_animal(new_animal)
                 

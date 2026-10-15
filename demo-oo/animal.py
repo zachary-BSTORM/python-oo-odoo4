@@ -15,3 +15,5 @@ class Animal:
         
     def get_infos(self):
         print(f"L'animal {self.name} de coleur : {self.color} est agé de {self.age}ans")
+        
+

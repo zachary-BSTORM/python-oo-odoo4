@@ -1,7 +1,5 @@
 from datetime import date
 
-from elephant import Elephant
-
 class Soigneur:
     def __init__(self,nom,year,month,day,experience,nb_animaux_responsable):
         self.nom = nom
@@ -26,7 +24,7 @@ class Soigneur:
     def age_soigneur(self):
         return date.today().year - self.date_naissance.year
         
-    def nourir(self,animal : Elephant):
+    def nourir(self,animal ):
         if animal.soigneur == self:
             animal.manger()
         else:

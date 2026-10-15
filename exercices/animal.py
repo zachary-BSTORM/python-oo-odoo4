@@ -1,4 +1,9 @@
-class Animal:
+from soigneur import Soigneur
+from abc import ABC, abstractmethod
+
+
+
+class Animal(ABC):
         def __init__(self,nom : str,appetit : int,satisfaction : int,en_vie : bool,soigneur : Soigneur):
             self.nom = nom
             self.__appetit = appetit
@@ -31,6 +36,19 @@ class Animal:
         def fatigue(self):
             self.__satisfaction -= 30
             self.__appetit -= 30
-            
-        def observer_environnement(self):
-            return f"{nom} observe son environnement "
+        
+        @abstractmethod
+        def observer_environnement(self,value):
+            pass
+        
+        @abstractmethod
+        def hasard(self):
+            pass
+                
+        @abstractmethod
+        def ramasser_objet(self):
+            pass
+        
+        @abstractmethod
+        def probabilite_deces(self):
+            pass

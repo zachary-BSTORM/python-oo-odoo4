@@ -1,43 +1,45 @@
 from abc import ABC, abstractmethod
 
 
-class Vehicule(ABC):
+class login(ABC):
     
-    @property
     @abstractmethod
-    def serial_number(self):
+    def login(self,email,password):
+        pass
+    
+class Crud(ABC):
+    @abstractmethod
+    def get_items(self):
         pass
     
     @abstractmethod
-    def show_infos():    
+    def get_items_by_id(self,id):
         pass
     
-class Moto(Vehicule):
-   
-   @property
-   def serial_number(self):
-       return "bdfqs4d56sfd465sd from moto"
-   
-   def show_infos(self):
-       return "informations from moto"
-    
-class Voiture(Vehicule):
-    @property
-    def serial_number(self):
-       return "bdfqs4d56sfd465sd from moto"
-   
-    def show_infos(self):
-       return "informations from moto"
+    @abstractmethod
+    def remove_item(self):
+        pass
         
-# vehicule_1 = Vehicule()
-moto_1 = Moto()
+class User(login,Crud):
+        
+    def get_items(self):
+        pass
+    
 
-print(moto_1.show_infos())
-print(moto_1.serial_number)
+    def get_items_by_id(self,id):
+        pass
+    
 
+    def remove_item(self):
+        pass
+    
+    def login(self,email,password):
+        pass
+    
+    
+new_user = User()
 
-voiture_1 = Voiture()
-
-
+if isinstance(new_user,Crud):
+    
         
         
