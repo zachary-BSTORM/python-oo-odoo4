@@ -1,4 +1,8 @@
    
+from elephant import Elephant
+from giraffe import Giraffe
+
+
 class Enclos:
     def __init__(self,name,capacity,size):
         self.name = name
@@ -22,7 +26,10 @@ class Enclos:
         
     def show_animals(self):
         for a in self.animals:
-            print(f"animal : {a.nom} - {a.appetit} hungry - {a.satisfaction} happy")
+            if isinstance(a,Giraffe):
+                print(f"Giraffe : {a.nom} - {a.appetit} hungry - {a.satisfaction} happy - type {a.__class__}")
+            if isinstance(a,Elephant):
+                print(f"Elephant : {a.nom} - {a.appetit} hungry - {a.satisfaction} happy - type {a.__class__}")
         
     def pass_day(self):
         for a in self.animals:

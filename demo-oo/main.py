@@ -1,68 +1,43 @@
-from typing import override
+from abc import ABC, abstractmethod
 
 
-class Animal:
-    def __init__(self,name : str,color : str , age : int,**kwargs):
-        self.name = name
-        self.color = color
-        self.age = age
-        
+class Vehicule(ABC):
     
-    def make_noise(self):
-        return "The animal make noise "
-        
-class Breed:
-    def __init__(self,breed_name : str , price : int,**kwargs):
-        self.breed_name = breed_name
-        self.price = price
-        
-    def get_information(self):
-        return f"Breed : {self.breed_name} - price : {self.price}"
+    @property
+    @abstractmethod
+    def serial_number(self):
+        pass
     
-    def make_noise(self):
-        return "this breed is noisy "
+    @abstractmethod
+    def show_infos():    
+        pass
     
-class Chien(Animal,Breed):
-    def __init__(self,toy : str,hungry : bool,**kwargs):
-        self.toy = toy
-        self.hungry = hungry
-        Breed.__init__(self,**kwargs)
-        Animal.__init__(self,**kwargs)
+class Moto(Vehicule):
+   
+   @property
+   def serial_number(self):
+       return "bdfqs4d56sfd465sd from moto"
+   
+   def show_infos(self):
+       return "informations from moto"
+    
+class Voiture(Vehicule):
+    @property
+    def serial_number(self):
+       return "bdfqs4d56sfd465sd from moto"
+   
+    def show_infos(self):
+       return "informations from moto"
         
+# vehicule_1 = Vehicule()
+moto_1 = Moto()
 
-    def make_noise(self):
-        return "The dog make noise" + Animal.make_noise(self) + Breed.make_noise(self)
-        
-        
-    
-if __name__ == "__main__":
+print(moto_1.show_infos())
+print(moto_1.serial_number)
 
-    rex = Chien("bones",True,name="rex",color="brun",age=5,breed_name="berger allemand",price=500)
-    
-    print(rex.name)
-    print(rex.color)
-    print(rex.age)
-    print(rex.toy)
-    print(rex.hungry)
-    print(rex.breed_name)
-    print(rex.price)
-    print(rex.__dict__)
-    
-    print("-----------------")
-    print(rex.make_noise())
-    
-    
-    print("-----------------")
-    
-    print("issubClass")
-    print(issubclass(Chien,Animal))
-    
-    print("isInstance")
-    print(isinstance(rex,Chien))
-    print(isinstance(rex,Animal))
-    
-    print("mro")
-    print(Chien.__mro__)
-    
-    print([cls.__name__ for cls in Chien.mro()])
-    
+
+voiture_1 = Voiture()
+
+
+        
+        

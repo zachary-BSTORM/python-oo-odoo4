@@ -1,4 +1,5 @@
 from elephant import Elephant
+from giraffe import Giraffe
 from soigneur import Soigneur
 from enclos import Enclos
 
@@ -10,13 +11,18 @@ if __name__ == "__main__":
     bob = Soigneur("bob",2000,10,10,"elephant",1)
     john = Soigneur("John",2000,10,10,"elephant",1)
 
-    djumbo = Elephant("djumbo",100,100,True,bob)
-    babar = Elephant("babar",100,100,True,bob)
+    djumbo = Elephant("djumbo",100,100,True,bob,2)
+    babar = Elephant("babar",100,100,True,bob,2.2)
+    
+    g_1 = Giraffe("giraffe 1",100,100,True,john,3)
+    g_2 = Giraffe("giraffe 2",100,100,True,john,3)
 
     enclos_1 = Enclos("enclos éléphant",20,200)
     print("------ ajout ----------")
     enclos_1.add_animal(djumbo)
     enclos_1.add_animal(babar)
+    enclos_1.add_animal(g_1)
+    enclos_1.add_animal(g_2)
     
     # print("------ remove ----------")
     # enclos_1.remove_animal(djumbo)
