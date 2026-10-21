@@ -35,15 +35,3 @@
 #     return -1
 
 # print(ChangingSequence(values))
-
-
-
-
-ma_liste = "0238157455"
-
-prefix_tel = slice(0,2,1)
-
-
-result = ma_liste[prefix_tel]
-
-print(result)
