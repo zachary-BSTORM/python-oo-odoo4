@@ -35,3 +35,22 @@
 #     return -1
 
 # print(ChangingSequence(values))
+
+from random import randint
+
+
+def tri_selection(liste):
+    n = len(liste)
+
+    for i in range(n - 1):
+        index_min = 0
+
+        for j in range(i + 1, n):
+            if liste[j] < liste[index_min]:
+                index_min = j
+        liste[i], liste[index_min] = liste[index_min], liste[i]
+
+
+ma_list = [randint(1, 1000) for _ in range(10000)]
+
+
