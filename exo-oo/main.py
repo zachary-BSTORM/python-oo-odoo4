@@ -36,21 +36,32 @@
 
 # print(ChangingSequence(values))
 
-from random import randint
+# -----------------------------------------------------------------------------
+from random import choice, randint
 
 
-def tri_selection(liste):
-    n = len(liste)
 
-    for i in range(n - 1):
-        index_min = 0
+def quick_sort(liste):
+    if len(liste) <= 1:
+        return liste
 
-        for j in range(i + 1, n):
-            if liste[j] < liste[index_min]:
-                index_min = j
-        liste[i], liste[index_min] = liste[index_min], liste[i]
+    pivot = [choice(liste)]
+    bigger = []
+    smaller = []
+
+    for v in liste:
+        if v < pivot[0]:
+            smaller.append(v)
+        elif v > pivot[0]:
+            bigger.append(v)
+        else:
+            pivot.append(v)
+
+    return quick_sort(smaller) + pivot   + quick_sort(bigger)
 
 
-ma_list = [randint(1, 1000) for _ in range(10000)]
+values = [randint(1, 1000) for _ in range(10)]
 
+quick_sort(values)
 
+print(values)
