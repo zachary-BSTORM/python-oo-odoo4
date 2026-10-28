@@ -252,18 +252,13 @@
 
 #     if not digits:
 #         return 0
-    
+
 #     result = 0
 #     for v in digits:
 #         result = result * 10 + (ord(v) - ord("0"))
-    
+
 
 #     INT_MIN, INT_MAX = -(2**31), 2**31 - 1
 #     return max(INT_MIN, min(result, INT_MAX))
 
 
-# myAtoi("-42")
-print(ord("0"))
-print(ord("7"))
-
-print(ord("7") - ord("0"))
