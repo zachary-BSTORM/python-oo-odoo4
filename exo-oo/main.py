@@ -262,3 +262,23 @@
 #     return max(INT_MIN, min(result, INT_MAX))
 
 
+def fenetres_distinctes(texte, k):
+    
+    if k > len(texte):
+        return 0
+    
+    compte, resultat = {}, 0
+    
+    for i, c in enumerate(texte):
+        compte[c] = compte.get(c, 0) + 1  # caractère entrant
+        if i >= k:
+            sortant = texte[i - k]  # caractère sortant
+            compte[sortant] -= 1
+            if compte[sortant] == 0:
+                del compte[sortant]
+        if i >= k - 1 and len(compte) == k:
+            resultat += 1
+    return resultat
+
+
+print(fenetres_distinctes("xyzzaz", 3))
